@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   
     # POST: /login
     post '/login' do
-        user = User.find_by(:username => params[:username])
+        user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-          redirect to "/index"
+          redirect to "/users/#{user.id}"
         else
           redirect to '/signup'
         end
@@ -39,6 +39,8 @@ class UsersController < ApplicationController
 
     # GET: /users/5
     get "/users/:id" do
+      @user = User.find_by(params)
+      @reports = @user.reports
       erb :"/users/show"
     end
   

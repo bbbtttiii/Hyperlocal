@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200824135848) do
     t.float    "wind_speed"
     t.string   "wind_direction"
     t.float    "relative_humidity"
-    t.float    "precipitaion"
+    t.float    "precipitation"
     t.float    "cloud_cover"
     t.string   "cloud_type"
     t.string   "current_conditions"
