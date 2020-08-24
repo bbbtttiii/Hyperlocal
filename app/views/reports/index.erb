@@ -1,1 +1,18 @@
 <h1>This is the Model's index page.</h1>
+
+<h2>All Reports</h2>
+
+<% @reports.each do |x| %>
+
+    <li><%= x.datetime %></li>
+    <li><%= x.current_conditions %></li>
+    <li><%= x.temperature %></li>
+    <li><%= x.pressure %></li>
+    <li><%= x.wind_speed %></li>
+    <li><%= x.wind_direction %></li>
+    <li><%= x.relative_humidity %></li>
+    <li><%= x.precipitation %></li>
+    <li><%= x.cloud_cover %></li>
+    <li><%= x.cloud_type %></li>
+
+<% end %>
