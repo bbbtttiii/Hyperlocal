@@ -1,25 +1,34 @@
 class UsersController < ApplicationController
-  
-    # GET: /login
-    get "/login" do
-      erb :"/users/login"
+
+    get '/users/:slug' do
+        @user = User.find_by_slug(params[:slug])
+        erb :'users/show'
     end
   
-    # POST: /login
+    #generate login
+    get "/login" do
+        if !logged_in?
+            erb :"/users/login"
+        else
+            redirect to '/index'
+        end
+    end
+  
+    #submit login
     post '/login' do
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           redirect to "/users/#{user.id}"
         else
-          redirect to '/signup'
+          redirect to '/login'
         end
     end
   
     #display sign up form
     get '/signup' do
         if !logged_in?
-            erb :'users/signup'
+            erb :'/users/signup'
         else
             redirect to '/index'
         end
@@ -30,30 +39,24 @@ class UsersController < ApplicationController
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
             redirect to '/signup'
         else
-            @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
-            @user.save
+            @user = User.create(:username => params[:username], :password => params[:password])
             session[:user_id] = @user.id
-            redirect to '/reports/index'
+            redirect "/index"
         end
     end
 
     # GET: /users/5
     get "/users/:id" do
-      @user = User.find_by(params)
-      @reports = @user.reports
-      erb :"/users/show"
+        if logged_in?
+            @user = User.find_by(params)
+            @reports = @user.reports
+            erb :"/users/show"
+        else
+            redirect to '/login'
+        end
     end
   
-    # GET: /users/5/edit
-    get "/users/:id/edit" do
-      erb :"/users/edit"
-    end
-  
-    # PATCH: /users/5
-    patch "/users/:id" do
-      redirect "/users/:id"
-    end
-  
+    # LOGOUT
     get "/logout" do
         if logged_in?
           session.destroy

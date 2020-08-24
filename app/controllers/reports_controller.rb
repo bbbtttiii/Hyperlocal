@@ -22,14 +22,10 @@ class ReportsController < ApplicationController
   # POST: /reports
   post "/reports" do
     if logged_in?
-      if params[:field] == ""
-        redirect to "/reports/new"
-      else
-        report = Report.create(params)
-        item.user_id = session[:user_id]
-        item.save
-        redirect "/reports#{report.id}"
-      end
+      report = Report.create(params)
+      report.user_id = session[:user_id]
+      report.save
+      redirect "/reports/#{report.id}"
     else
       redirect to '/login'
     end
@@ -38,28 +34,62 @@ class ReportsController < ApplicationController
   # GET: /reports/5
   get "/reports/:id" do
     if logged_in?
-      erb :"/reports/show"
+      if @report = Report.find_by(params)
+        erb :'reports/show'
+      else
+        redirect '/index'
+      end
     else
       redirect to '/login'
     end
   end
 
-
-
-
   # GET: /reports/5/edit
-  get "/reports/:id/edit" do
-    erb :"/reports/edit"
+  get '/reports/:id/edit' do
+    if logged_in?
+      @report = Report.find_by(params)
+      if @report.user_id != session[:user_id]
+        redirect to '/items'
+      end
+      erb :'/reports/edit'
+    else
+      redirect to '/login'
+    end
   end
 
   # PATCH: /reports/5
   patch "/reports/:id" do
-    redirect "/reports/:id"
+    if logged_in?
+      if params[:field] == ""
+        redirect to "/reports/#{params[:id]}/edit"
+      else
+        @report = Report.find_by(id: params[:id])
+        if @report.user_id == session[:user_id]
+          if @report.update(params[:report])
+            redirect to "/reports/#{@report.id}"
+          else
+            redirect to "/reports/#{@report.id}/edit"
+          end
+        else
+          redirect to '/index'
+        end
+      end
+    else
+      redirect to '/login'
+    end
   end
 
   # DELETE: /reports/5/delete
   delete "/reports/:id/delete" do
-    redirect "/reports"
+    if logged_in?
+      @report = Report.find_by_id(params[:id])
+      if @report &&report.user == current_user
+        @report.delete
+      end
+      redirect "/reports"
+    else
+      redirect to "/login"
+    end
   end
 
 end

@@ -1,1 +1,40 @@
 <h1>Insert the form to edit an instance of your model here.</h1>
+
+  
+<form action="/items/<%=@item.id%>" method="post">
+
+    <input type="hidden" name="_method" value="patch">
+
+    Current Conditions *<br>
+    <input type="textarea" name="report[current_conditions]" value="<%=@report.current_conditions%>">
+    <br><br>
+    Temperature<br>
+    <input type="text" name="report[temperature]" value="<%=@report.temperature%>">
+    <br><br>
+    Pressure<br>
+    <input type="text" name="report[pressure]" value="<%=@report.pressure%>">
+    <br><br>
+    Wind Speed<br>
+    <input type="text" name="report[wind_speed]" value="<%=@report.wind_speed%>">
+    <br><br>
+    Wind Direction<br>
+    <input type="text" name="report[wind_direction]" value="<%=@report.wind_direction%>">
+    <br><br>
+    Relative Humidity<br>
+    <input type="text" name="report[relative_humidity]" value="<%=@report.relative_humidity%>">
+    <br><br>
+    Precipation Total<br>
+    <input type="text" name="report[precipitation]" value="<%=@report.precipitation%>">
+    <br><br>
+    Cloud Cover<br>
+    <input type="text" name="report[cloud_cover]" value="<%=@report.cloud_cover%>">
+    <br><br>
+    Cloud Type<br>
+    <input type="text" name="report[cloud_type]" value="<%=@report.cloud_type%>">
+    <br><br>
+    <input type="submit" value="Done Editing">
+    <br><br>
+
+    <p><small>* Required</small></p>
+  
+</form>

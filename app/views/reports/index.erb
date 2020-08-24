@@ -4,15 +4,14 @@
 
 <% @reports.each do |x| %>
 
-    <li><%= x.datetime %></li>
-    <li><%= x.current_conditions %></li>
-    <li><%= x.temperature %></li>
-    <li><%= x.pressure %></li>
-    <li><%= x.wind_speed %></li>
-    <li><%= x.wind_direction %></li>
-    <li><%= x.relative_humidity %></li>
-    <li><%= x.precipitation %></li>
-    <li><%= x.cloud_cover %></li>
-    <li><%= x.cloud_type %></li>
+    Current Conditions: <li><%= x.current_conditions %></li>
+    Temperature: <li><%= x.temperature %></li>
+    Pressure: <li><%= x.pressure %></li>
+    Wind Speed: <li><%= x.wind_speed %></li>
+    Wind Direction: <li><%= x.wind_direction %></li>
+    Relative Humidity: <li><%= x.relative_humidity %></li>
+    Precipitation: <li><%= x.precipitation %></li>
+    Cloud Cover: <li><%= x.cloud_cover %></li>
+    Cloud Type: <li><%= x.cloud_type %></li>
 
 <% end %>
