@@ -2,12 +2,17 @@ class ReportsController < ApplicationController
 
   # GET: /reports
   get "/reports" do
-    erb :"/reports/index.html"
+    if logged_in?
+      @reports = Report.all
+      erb :"/reports/index"
+    else
+      redirect to '/login'
+    end
   end
 
   # GET: /reports/new
   get "/reports/new" do
-    erb :"/reports/new.html"
+    erb :"/reports/new"
   end
 
   # POST: /reports
@@ -17,12 +22,12 @@ class ReportsController < ApplicationController
 
   # GET: /reports/5
   get "/reports/:id" do
-    erb :"/reports/show.html"
+    erb :"/reports/show"
   end
 
   # GET: /reports/5/edit
   get "/reports/:id/edit" do
-    erb :"/reports/edit.html"
+    erb :"/reports/edit"
   end
 
   # PATCH: /reports/5
@@ -34,4 +39,5 @@ class ReportsController < ApplicationController
   delete "/reports/:id/delete" do
     redirect "/reports"
   end
+
 end
