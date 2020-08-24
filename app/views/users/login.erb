@@ -1,21 +1,15 @@
-<div class="container">
+<h2>Login</h2>
 
-  <div class="col-md-8 col-md-offset-2">
-    <h2>Login</h2>
+<form action="/login" method="post">
+    Username<br>
+    <input type="text" name="username" value="<%= @user && @user.username %>">
+    <br><br>
+    Pasword<br>
+    <input type="text" name="password">
+    <br><br>
+    <input type="submit" value="Log In">
+    
+</form>
 
-    <form action="/login" method="post">
-      Username<br>
-      <input type="text" name="username">
-      <br><br>
-      Pasword<br>
-      <input type="text" name="password">
-      <br><br>
-      <input type="submit" value="Submit">
-      
-    </form>
-
-    <br>
-    <p>New user? <a href="/reports/users/signup">Sign up</a></p>
-
-  </div>
-</div>
+<br>
+<p>New user? <a href="/reports/users/signup">Sign up</a></p>
