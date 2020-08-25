@@ -38,8 +38,12 @@ class UsersController < ApplicationController
   
     get '/users/:id' do
       @user = User.find_by(params)
-      @reports = @user.reports
-      erb :'users/show'
+      if @user == current_user
+        @reports = @user.reports
+        erb :'users/show'
+      else
+        erb :'/users/login'
+      end
     end
   
     get '/logout' do
