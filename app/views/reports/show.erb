@@ -1,15 +1,15 @@
-<h2>Your latest report</h2>
+<h2>Your report</h2>
 
 <li><h3><%= @report.updated_at %></h3></li>
-<li><%= @report.current_conditions %></li>
-<li><%= @report.temperature %></li>
-<li><%= @report.pressure %></li>
-<li><%= @report.wind_speed %></li>
-<li><%= @report.wind_direction %></li>
-<li><%= @report.relative_humidity %></li>
-<li><%= @report.precipitation %></li>
-<li><%= @report.cloud_cover %></li>
-<li><%= @report.cloud_type %></li>
+<li>Current Conditions: <%= @report.current_conditions %></li>
+<li>Temperature: <%= @report.temperature %></li>
+<li>Pressure: <%= @report.pressure %></li>
+<li>Wind Speed: <%= @report.wind_speed %></li>
+<li>Wind Direction: <%= @report.wind_direction %></li>
+<li>Relative Humidity: <%= @report.relative_humidity %></li>
+<li>Precipitation: <%= @report.precipitation %></li>
+<li>Cloud Cover: <%= @report.cloud_cover %></li>
+<li>Cloud Type: <%= @report.cloud_type %></li>
 
 <% if @report.user == current_user %>
   <br><br>
@@ -17,5 +17,14 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Report">
   </form>
+
+  <br><br>
+
+  <a href="/reports/<%=@report.id%>/edit">Edit Report</a> |
+  <a href="/users/<%=@report.user_id%>">Your Reports</a> |
+  <% if logged_in? %>
+  <a href="/reports/new">Create a Report</a> 
+  <a href="/logout">Log Out</a>
+  <%end%>
 
 <% end %>
