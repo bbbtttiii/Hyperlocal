@@ -1,6 +1,8 @@
-<h2>Your report</h2>
+<h2>Report</h2>
 
 <li><h3><%= @report.updated_at %></h3></li>
+<li>Posted by: <%=@report.user_id%></li>
+<br>
 <li>Current Conditions: <%= @report.current_conditions %></li>
 <li>Temperature: <%= @report.temperature %></li>
 <li>Pressure: <%= @report.pressure %></li>

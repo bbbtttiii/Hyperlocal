@@ -1,4 +1,4 @@
-  class ApplicationController < Sinatra::Base
+class ApplicationController < Sinatra::Base
 
   configure do
     set :public_folder, 'public'
@@ -7,7 +7,7 @@
     set :session_secret, "secret"
   end
 
-  # register Sinatra::Flash
+  register Sinatra::Flash
 
   get '/' do
     erb :'welcome'
@@ -24,7 +24,7 @@
 
     def redirect_if_not_logged_in
       if !current_user
-        # flash[:message] = "You must log in to see that page"
+        flash[:message] = "You must log in to see that page"
         redirect '/login'
       end
     end
