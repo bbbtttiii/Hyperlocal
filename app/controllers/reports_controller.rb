@@ -43,7 +43,7 @@ class ReportsController < ApplicationController
     if check_owner(@report)
       @report.update(params[:report])
     end
-    erb :'reports/edit'
+    redirect "reports/#{@report.id}"
   end
 
   delete '/reports/:id' do

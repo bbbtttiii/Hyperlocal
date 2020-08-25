@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       if current_user
         redirect '/reports'
       end
-        erb :'users/login'
+      erb :'users/login'
     end
   
     post '/login' do
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         redirect "/users/#{@user.id}"
       else
         # flash[:message] = "Invalid Login"
-        erb :'/users/login'
+        redirect '/users/login'
       end
     end
   
