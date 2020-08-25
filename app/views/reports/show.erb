@@ -1,18 +1,21 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h2>Your latest report</h2>
 
-<h2>Your report</h2>
+<li><h3><%= @report.updated_at %></h3></li>
+<li><%= @report.current_conditions %></li>
+<li><%= @report.temperature %></li>
+<li><%= @report.pressure %></li>
+<li><%= @report.wind_speed %></li>
+<li><%= @report.wind_direction %></li>
+<li><%= @report.relative_humidity %></li>
+<li><%= @report.precipitation %></li>
+<li><%= @report.cloud_cover %></li>
+<li><%= @report.cloud_type %></li>
 
-<% @reports.each do |x| %>
-
-    <li><h3><%= x.updated_at %></h3></li>
-    <li><%= x.current_conditions %></li>
-    <li><%= x.temperature %></li>
-    <li><%= x.pressure %></li>
-    <li><%= x.wind_speed %></li>
-    <li><%= x.wind_direction %></li>
-    <li><%= x.relative_humidity %></li>
-    <li><%= x.precipitation %></li>
-    <li><%= x.cloud_cover %></li>
-    <li><%= x.cloud_type %></li>
+<% if @report.user == current_user %>
+  <br><br>
+  <form action="/reports/<%=@report.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Report">
+  </form>
 
 <% end %>

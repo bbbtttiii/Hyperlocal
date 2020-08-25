@@ -2,13 +2,11 @@
 
 <h3>Your Reports:</h3>
 
-<% @reports.each do |x| %>
+<% @reports.each do |r| %>
 
-  <li><a href="/reports/<%=x.id%>"><%= x.updated_at %></a></li>
+  <li><a href="/reports/<%=r.id%>"><%= r.updated_at %></a></li>
 
 <% end %>
 
 <br><br>
 <a href="/reports/new">Create a report</a>
-<br><br>
-<a href="/logout">Log Out</a>

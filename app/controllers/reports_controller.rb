@@ -13,10 +13,10 @@ class ReportsController < ApplicationController
 
   post '/reports' do
     redirect_if_not_logged_in
-    report = Report.create(params)
-    report.user_id = session[:user_id]
-    report.save
-    redirect "/reports/#{report.id}"
+    @report = Report.create(params)
+    @report.user_id = session[:user_id]
+    @report.save
+    redirect "/reports/#{@report.id}"
   end
 
   get '/reports/:id' do
@@ -26,7 +26,6 @@ class ReportsController < ApplicationController
     else
       redirect '/reports'
     end
-
   end
 
   get '/reports/:id/edit' do
@@ -44,7 +43,7 @@ class ReportsController < ApplicationController
     if check_owner(@report)
       @report.update(params[:report])
     end
-      erb :'reports/show'
+    erb :'reports/edit'
   end
 
   delete '/reports/:id' do

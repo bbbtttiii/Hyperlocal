@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     get '/signup' do
-  
       if current_user
         redirect '/reports'
       end

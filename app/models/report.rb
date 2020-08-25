@@ -1,4 +1,4 @@
 class Report < ActiveRecord::Base
     belongs_to :user
-    validates :name, presence: true
+    # validates :username, presence: true
 end
