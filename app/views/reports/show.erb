@@ -3,15 +3,15 @@
 <li><h3><%= @report.updated_at %></h3></li>
 <li>Posted by: <%=@report.user_id%></li>
 <br>
-<li>Current Conditions: <%= @report.current_conditions %></li>
-<li>Temperature (F): <%= @report.temperature %></li>
-<li>Pressure (mb): <%= @report.pressure %></li>
-<li>Wind Speed (mph): <%= @report.wind_speed %></li>
-<li>Wind Direction: <%= @report.wind_direction %></li>
-<li>Relative Humidity: <%= @report.relative_humidity %></li>
-<li>Precipitation (in): <%= @report.precipitation %></li>
-<li>Cloud Cover: <%= @report.cloud_cover %></li>
-<li>Cloud Type: <%= @report.cloud_type %></li>
+<li>Current Conditions: <b><%= @report.current_conditions %></b></li>
+<li>Temperature (F): <b><%= @report.temperature %></b></li>
+<li>Pressure (mb): <b><%= @report.pressure %></b></li>
+<li>Wind Speed (mph): <b><%= @report.wind_speed %></b></li>
+<li>Wind Direction: <b><%= @report.wind_direction %></b></li>
+<li>Relative Humidity: <b><%= @report.relative_humidity %></b></li>
+<li>Precipitation (in): <b><%= @report.precipitation %></b></li>
+<li>Cloud Cover: <b><%= @report.cloud_cover %></b></li>
+<li>Cloud Type: <b><%= @report.cloud_type %></b></li>
 
 <% if @report.user == current_user %>
   <br><br>
