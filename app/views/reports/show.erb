@@ -4,7 +4,7 @@
 
 <% @reports.each do |x| %>
 
-    <li><%= x.datetime %></li>
+    <li><h3><%= x.updated_at %></h3></li>
     <li><%= x.current_conditions %></li>
     <li><%= x.temperature %></li>
     <li><%= x.pressure %></li>

@@ -2,8 +2,9 @@
 
 <% @reports.each do |x| %>
 
-  <%= x.current_conditions %>
+  <li><%= x.current_conditions %></li>
 
 <% end %>
 
+<br><br>
 <a href="/logout">Log Out</a>
