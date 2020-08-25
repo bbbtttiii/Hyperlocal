@@ -17,7 +17,11 @@
   <body>
     <div class="wrapper">
 
-        <%= yield %>
+      <%= yield %>
+
+      <%if !logged_in? %>
+          <p>New user? <a href="/signup">Sign up</a></p>
+      <% end %>
 
       <footer class="branding">
         <small>&copy; 2020 <strong>Hyperlocal</strong></small>

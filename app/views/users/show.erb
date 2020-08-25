@@ -1,10 +1,14 @@
 <h2>Hello, <%=@user.username%>!</h2>
 
+<h3>Your Reports:</h3>
+
 <% @reports.each do |x| %>
 
-  <li><%= x.current_conditions %></li>
+  <li><a href="/reports/<%=x.id%>"><%= x.updated_at %></a></li>
 
 <% end %>
 
+<br><br>
+<a href="/reports/new">Create a report</a>
 <br><br>
 <a href="/logout">Log Out</a>
