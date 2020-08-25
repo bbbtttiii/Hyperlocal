@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   
     get '/login' do
       if current_user
+        flash[:message] = "Already logged in!"
         redirect '/reports'
       end
       erb :'users/login'
@@ -42,6 +43,7 @@ class UsersController < ApplicationController
         @reports = @user.reports
         erb :'users/show'
       else
+        flash[:message] = "You must log in to see that page"
         erb :'/users/login'
       end
     end
