@@ -49,7 +49,7 @@ class UsersController < ApplicationController
         @reports = @user.reports
         erb :'users/show'
       else
-        # flash[:error] = "You must log in to see that page"
+        flash[:error] = "You must log in to see that page"
         erb :'/users/login'
       end
     end

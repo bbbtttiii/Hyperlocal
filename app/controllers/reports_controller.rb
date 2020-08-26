@@ -72,5 +72,4 @@ class ReportsController < ApplicationController
     redirect "reports/#{@report.id}"
   end
 
-
 end
