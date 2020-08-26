@@ -10,7 +10,7 @@ A CRUD/MVC app that lets amateur meteorologists track their station observations
 
 ## Features
 
-After creating an account, the user can make a new report as well as view their previous observations.
+After creating an account, you can create new observations, edit or delete your entries, and view reports from all users.
 
 ## Built With
 
