@@ -1,5 +1,7 @@
 <h2>Login</h2>
 
+<%= flash[:message] %>
+
 <form action="/login" method="post">
     Username<br>
     <input type="text" name="username" value="<%= @user && @user.username %>">

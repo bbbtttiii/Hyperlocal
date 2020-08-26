@@ -1,4 +1,10 @@
 <h2>Welcome!</h2>
 
-<a href="/login">Log In</a> |
-<a href="/signup">Sign Up</a>
+<% if !logged_in? %>
+    <a href="/login">Log In</a> |
+    <a href="/signup">Sign Up</a>
+<% else %>
+    <a href="/reports/new">Create Report</a><br>
+    <a href="">View my Reports</a><br>
+    <a href="/reports/index">View all Reports</a>
+<% end %>

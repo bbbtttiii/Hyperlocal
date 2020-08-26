@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect "/users/#{user.id}"
       else
-        # flash[:message] = user.errors.full_messages
+        flash[:usertaken] = "This username already exists"
         redirect '/signup'
       end
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
           session[:user_id] = @user.id
           redirect "/users/#{@user.id}"
         else
-          flash[:message] = "Invalid Login"
+          flash[:message] = "Invalid login"
           erb :'/users/login'
         end
     end    

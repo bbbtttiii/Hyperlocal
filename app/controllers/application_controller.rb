@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    erb :'welcome'
+    erb :'home'
   end
 
   helpers do
@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
 
     def redirect_if_not_logged_in
       if !current_user
-        flash[:message] = "You must log in to see that page"
+        flash[:notloggedin] = "You must log in to see that page"
         redirect '/login'
       end
     end

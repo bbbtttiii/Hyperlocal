@@ -30,12 +30,29 @@
     width: 85%;
   }
 
-  header a {
-    color: red;
-    margin-left: 20px;
+  a:link,
+  a:visited {
+    text-decoration: none;
   }
 
-  h1 {
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+
+  .navbutton a {
+    background-color: #008CBA;
+    color: white;
+    display: inline-block;
+    padding: 5px;
+  }
+
+  header a {
+    margin-left: 20px;
+    color: black;
+  }
+
+  header h1 {
     font-size: 36px;
     line-height: 54px;
   }
@@ -55,11 +72,6 @@
   p {
     margin-bottom: 18px;
   }
-
-  /* .obs {
-    color: red;
-    font-family: 'Courier New', Courier, monospace;
-  } */
 
   .main {
     overflow: hidden;

@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
 
-  #renders all reports (index) page
+  #renders reports from all users (index page)
   get '/reports' do
     redirect_if_not_logged_in
     @reports = Report.all
@@ -16,16 +16,20 @@ class ReportsController < ApplicationController
   #processes new report form
   post '/reports' do
     redirect_if_not_logged_in
-    @report = Report.create(params)
-    @report.user_id = session[:user_id]
-    @report.save
-    redirect "/reports/#{@report.id}"
+    if params[:current_conditions] == ""
+      flash[:req] = "Current conditions are required"
+      redirect 'reports/new'
+    else
+      @report = Report.create(params)
+      @report.user_id = session[:user_id]
+      @report.save
+      redirect "/reports/#{@report.id}"
+    end
   end
 
   #renders a single report from user
   get '/reports/:id' do
     redirect_if_not_logged_in
-    # fix_blank_entries
     if @report = Report.find_by(params)
       erb :'reports/show'
     else
@@ -36,11 +40,16 @@ class ReportsController < ApplicationController
   #renders edit form
   get '/reports/:id/edit' do
     redirect_if_not_logged_in
-    @report = Report.find_by(params)
-    if !check_owner(@report)
-      redirect '/reports'
+    # fix_blank_entries
+    if params[:current_conditions] == ""
+      redirect "/reports/#{@report.id}/edit"
+    else
+      @report = Report.find_by(params)
+      if !check_owner(@report)
+        redirect '/reports'
+      end
+      erb :'reports/edit'
     end
-    erb :'reports/edit'
   end
 
   #processes edit form

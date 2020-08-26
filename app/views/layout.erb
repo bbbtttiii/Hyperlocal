@@ -13,23 +13,20 @@
   
   <body>
   <header>
-  <h1>
-    <% if logged_in? %>
-      <a href="/reports">Hyperlocal</a>
+    <% if logged_in? && current_user %>
+      <h1><a href="">Hyperlocal</a></h1>
+      <span class="navbutton"><a href="/reports/new">Add Report</a></span>
+      <span class="navbutton"><a href="/reports">All Reports</a></span>
+      <span class="navbutton"><a href="/logout">Log Out</a></span>
     <% else %>
-      <a href="/login">Hyperlocal</a>
+      <h1><a href="/login">Hyperlocal</a></h1>
     <% end %>
-  </h1>
 
   </header>
     <div class="wrapper">
 
       <%= yield %>
       <br>
-      <% if logged_in? %>
-       <a href="/reports/new">Add Report</a> | 
-       <a href="/logout">Log Out</a>
-      <% end %>
       
       <footer class="branding">
         <small>&copy; 2020 <strong>Hyperlocal</strong>&#9889;</small>
