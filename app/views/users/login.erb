@@ -1,7 +1,7 @@
 <h2>Login</h2>
 
-<%= flash[:message] %>
-<%= flash[:error] %>
+<span class="flash"><%= flash[:message] %></span>
+<span class="flash"><%= flash[:error] %></span>
 
 <form action="/login" method="post">
     Username<br>
