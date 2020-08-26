@@ -10,6 +10,7 @@ class CreateReports < ActiveRecord::Migration
       t.float :cloud_cover
       t.string :cloud_type
       t.string :current_conditions
+      t.string :location
 
       t.integer :user_id
 

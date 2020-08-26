@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20200824135848) do
     t.float    "cloud_cover"
     t.string   "cloud_type"
     t.string   "current_conditions"
+    t.string   "location"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
