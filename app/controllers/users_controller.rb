@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   
     #renders the logged in user's page
     get '/users/:id' do
+    redirect_if_not_logged_in
       @user = User.find_by(params)
       if @user == current_user
         @reports = @user.reports

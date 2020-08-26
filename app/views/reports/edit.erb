@@ -2,8 +2,11 @@
 
     <input type="hidden" name="_method" value="patch">
 
+    Location<br>
+    <input type="text" name="report[location" value="<%=@report.location%>">
+    <br><br>
     Current Conditions *<br>
-    <input type="textarea" name="report[current_conditions]" value="<%=@report.current_conditions%>">
+    <input type="text" name="report[current_conditions]" value="<%=@report.current_conditions%>">
     <br><br>
     Temperature<br>
     <input type="text" name="report[temperature]" value="<%=@report.temperature%>">
