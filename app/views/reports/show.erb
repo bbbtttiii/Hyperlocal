@@ -14,19 +14,14 @@
 <li>Cloud Type: <b><%= @report.cloud_type %></b></li>
 
 <% if @report.user == current_user %>
-  <br><br>
+
+  <br>
   <form action="/reports/<%=@report.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Report">
   </form>
-
-  <br><br>
-
+  <br>
   <a href="/reports/<%=@report.id%>/edit">Edit Report</a> |
-  <a href="/users/<%=@report.user_id%>">Your Reports</a> |
-  <% if logged_in? %>
-  <a href="/reports/new">Create a Report</a> 
-  <a href="/logout">Log Out</a>
-  <%end%>
+  <a href="/users/<%=@report.user_id%>">Your Reports</a>
 
 <% end %>

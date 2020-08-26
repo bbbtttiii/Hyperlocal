@@ -12,13 +12,27 @@
   </head>
   
   <body>
-  <header><h1>Hyperlocal</h1></header>
+  <header>
+  <h1>
+    <% if logged_in? %>
+      <a href="/reports">Hyperlocal</a>
+    <% else %>
+      <a href="/login">Hyperlocal</a>
+    <% end %>
+  </h1>
+
+  </header>
     <div class="wrapper">
 
       <%= yield %>
+      <br>
+      <% if logged_in? %>
+       <a href="/reports/new">Add Report</a> | 
+       <a href="/logout">Log Out</a>
+      <% end %>
       
       <footer class="branding">
-        <small>&copy; 2020 <strong>Hyperlocal</strong></small>
+        <small>&copy; 2020 <strong>Hyperlocal</strong>&#9889;</small>
       </footer>
     </div>
 
