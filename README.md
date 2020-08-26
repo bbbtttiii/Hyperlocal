@@ -14,9 +14,9 @@ After creating an account, the user can make a new report as well as view their 
 
 ## Built With
 
-[Sinatra](http://sinatrarb.com)
-
-[Corneal](https://github.com/thebrianemory/corneal)
+- [Sinatra](http://sinatrarb.com)
+- [Corneal](https://github.com/thebrianemory/corneal)
+- [Sinatra::Flash](https://github.com/SFEley/sinatra-flash)
 
 ## Contributing
 
