@@ -15,12 +15,12 @@
 <% if @report.user == current_user %>
 
   <br>
+  <form action="/reports/<%=@report.id%>/edit" method="get">
+    <input type="submit" value="Edit Report">
+  </form>
   <form action="/reports/<%=@report.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Report">
   </form>
-  <br>
-  <a href="/reports/<%=@report.id%>/edit">Edit Report</a> |
-  <a href="/users/<%=@report.user_id%>">Your Reports</a>
 
 <% end %>
