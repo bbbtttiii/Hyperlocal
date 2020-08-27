@@ -1,5 +1,5 @@
 # Hyperlocal
-A CRUD/MVC app that lets amateur meteorologists track their station observations.
+A CRUD/MVC app that lets amateur meteorologists and storm chasers track their station observations.
 
 ## Getting Started
 
@@ -15,6 +15,7 @@ After creating an account, you can create new observations, edit or delete your 
 ## Built With
 
 - [Sinatra](http://sinatrarb.com)
+- [Active Record](https://github.com/rails/rails/tree/master/activerecord)
 - [Corneal](https://github.com/thebrianemory/corneal)
 - [Sinatra::Flash](https://github.com/SFEley/sinatra-flash)
 
