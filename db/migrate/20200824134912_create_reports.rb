@@ -5,9 +5,9 @@ class CreateReports < ActiveRecord::Migration
       t.float :pressure
       t.float :wind_speed
       t.string :wind_direction
-      t.float :relative_humidity
+      t.integer :relative_humidity
       t.float :precipitation
-      t.float :cloud_cover
+      t.integer :cloud_cover
       t.string :cloud_type
       t.string :current_conditions
       t.string :location

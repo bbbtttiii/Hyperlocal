@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    erb :'home'
+    erb :'home' #renders home page (not specific to user or report actions)
   end
 
   helpers do
