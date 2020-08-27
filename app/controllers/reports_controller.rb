@@ -21,7 +21,7 @@ class ReportsController < ApplicationController
       redirect 'reports/new'
     else
       @report = Report.create(params)
-      @report.user_id = session[:user_id]
+      @report.user_id = session[:user_id] #associates the report with the curent session user
       @report.save
       redirect "/reports/#{@report.id}"
     end
