@@ -1,10 +1,10 @@
 class ReportsController < ApplicationController
 
   #renders reports from all users (index page)
-  get '/reports' do
-    redirect_if_not_logged_in
-    @reports = Report.all
-    erb :'reports/index'
+  get '/reports' do 
+    redirect_if_not_logged_in 
+    @reports = Report.all #sets instance variable to all method of Report obj
+    erb :'reports/index' #renders index page
   end
 
   #renders new report form

@@ -9,7 +9,7 @@
     <input type="text" name="report[current_conditions]" value="<%=@report.current_conditions%>">
     <br><br>
     Temperature<br>
-    <input type="text" name="report[temperature]" value="<%=@report.temperature%>"><select id="temp_unit" name="report[temp_unit]"><option name="f" value="F">&#176;F</option><option name="c" value="c">&#176;c</option><option name="k" value="K">K</option></select>
+    <input type="text" name="report[temperature]" value="<%=@report.temperature%>"><select id="temp_unit" name="report[temp_unit]"><option name="f" value="&#176;F">&#176;F</option><option name="c" value="&#176;c">&#176;c</option><option name="k" value="K">K</option></select>
     <br><br>
     Pressure<br>
     <input type="text" name="report[pressure]" value="<%=@report.pressure%>"><select id="pressure_unit" name="report[pressure_unit]"><option name="mb" value="mb">mb</option><option name="inhg" value="inHg">inHg</option><option name="mmhg" value="mmHg">mmHg</option></select>
@@ -20,13 +20,13 @@
     Wind Direction<br>
     <input type="text" name="report[wind_direction]" value="<%=@report.wind_direction%>">
     <br><br>
-    Relative Humidity<br>
+    Relative Humidity (&#37;)<br>
     <input type="text" name="report[relative_humidity]" value="<%=@report.relative_humidity%>">
     <br><br>
     Precipation Total<br>
     <input type="text" name="report[precipitation]" value="<%=@report.precipitation%>"><select id="precip_unit" name="report[precip_unit]"><option name="in" value="in">in</option><option name="cm" value="cm">cm</option></select>
     <br><br>
-    Cloud Cover<br>
+    Cloud Cover (&#37;)<br>
     <input type="text" name="report[cloud_cover]" value="<%=@report.cloud_cover%>">
     <br><br>
     Cloud Type<br>

@@ -8,9 +8,9 @@
 <li>Pressure: <b><%= @report.pressure %><% if @report.pressure != nil %> <%= @report.pressure_unit %><%end%></b></li>
 <li>Wind Speed: <b><%= @report.wind_speed %><% if @report.wind_speed != nil %> <%= @report.wind_unit %><%end%></b></li>
 <li>Wind Direction: <b><%= @report.wind_direction %></b></li>
-<li>Relative Humidity: <b><%= @report.relative_humidity %></b></li>
+<li>Relative Humidity: <b><%= @report.relative_humidity %>&#37;</b></li>
 <li>Precipitation: <b><%= @report.precipitation %><% if @report.precipitation != nil %> <%= @report.precip_unit %><%end%></b></li>
-<li>Cloud Cover: <b><%= @report.cloud_cover %></b></li>
+<li>Cloud Cover: <b><%= @report.cloud_cover %>&#37;</b></li>
 <li>Cloud Type: <b><%= @report.cloud_type %></b></li>
 
 <% if @report.user == current_user %>
