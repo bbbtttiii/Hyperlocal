@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20200824135848) do
     t.string   "cloud_type"
     t.string   "current_conditions"
     t.string   "location"
+    t.string   "wind_unit"
+    t.string   "temp_unit"
+    t.string   "pressure_unit"
+    t.string   "precip_unit"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

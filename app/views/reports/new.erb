@@ -1,6 +1,6 @@
 <h2>New Report</h2>
 
-<%= flash[:req]%>
+<span class="flash"><%= flash[:req]%></span>
 
 <form action="/reports" method="post">
 
@@ -10,14 +10,14 @@
     Current Conditions *<br>
     <input type="text" name="current_conditions">
     <br><br>
-    Temperature (F)<br>
-    <input type="text" name="temperature">
+    Temperature<br>
+    <input type="text" name="temperature"><select id="temp_unit" name="temp_unit"><option name="f" value="F">&#176;F</option><option name="c" value="c">&#176;c</option><option name="k" value="K">K</option></select>
     <br><br>
-    Pressure (mb)<br>
-    <input type="text" name="pressure">
+    Pressure<br>
+    <input type="text" name="pressure"><select id="pressure_unit" name="pressure_unit"><option name="mb" value="mb">mb</option><option name="inhg" value="inHg">inHg</option><option name="mmhg" value="mmHg">mmHg</option></select>
     <br><br>
-    Wind Speed (mph)<br>
-    <input type="text" name="wind_speed">
+    Wind Speed<br>
+    <input type="text" name="wind_speed"><select id="wind_unit" name="wind_unit"><option name="mph" value="mph">mph</option><option name="kph" value="kph">kph</option><option name="knots" value="knots">knots</option></select>
     <br><br>
     Wind Direction<br>
     <input type="text" name="wind_direction">
@@ -25,8 +25,8 @@
     Relative Humidity<br>
     <input type="text" name="relative_humidity">
     <br><br>
-    Precipation Total (in)<br>
-    <input type="text" name="precipitation">
+    Precipation Total<br>
+    <input type="text" name="precipitation"><select id="precip_unit" name="precip_unit"><option name="in" value="in">in</option><option name="cm" value="cm">cm</option></select>
     <br><br>
     Cloud Cover<br>
     <input type="text" name="cloud_cover">

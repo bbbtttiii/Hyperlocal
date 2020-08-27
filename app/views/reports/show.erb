@@ -4,12 +4,12 @@
 <br>
 <li>Location: <b><%= @report.location %></b></li>
 <li>Current Conditions: <b><%= @report.current_conditions %></b></li>
-<li>Temperature (F): <b><%= @report.temperature %></b></li>
-<li>Pressure (mb): <b><%= @report.pressure %></b></li>
-<li>Wind Speed (mph): <b><%= @report.wind_speed %></b></li>
+<li>Temperature: <b><%= @report.temperature %><% if @report.temperature != nil %> <%= @report.temp_unit %><%end%></b></li>
+<li>Pressure: <b><%= @report.pressure %><% if @report.pressure != nil %> <%= @report.pressure_unit %><%end%></b></li>
+<li>Wind Speed: <b><%= @report.wind_speed %><% if @report.wind_speed != nil %> <%= @report.wind_unit %><%end%></b></li>
 <li>Wind Direction: <b><%= @report.wind_direction %></b></li>
 <li>Relative Humidity: <b><%= @report.relative_humidity %></b></li>
-<li>Precipitation (in): <b><%= @report.precipitation %></b></li>
+<li>Precipitation: <b><%= @report.precipitation %><% if @report.precipitation != nil %> <%= @report.precip_unit %><%end%></b></li>
 <li>Cloud Cover: <b><%= @report.cloud_cover %></b></li>
 <li>Cloud Type: <b><%= @report.cloud_type %></b></li>
 
@@ -27,3 +27,4 @@
   <a href="/users/<%=current_user.id%>">Back to my reports</a>
 
 <% end %>
+
