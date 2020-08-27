@@ -5,7 +5,7 @@ A CRUD/MVC app that lets amateur meteorologists and storm chasers track their st
 
 - Clone
 - Run `bundle install`
-- Run `rake db:migrate`
+- Run `rake db:migrate` and `rake db:seed`
 - Run `shotgun`
 
 ## Features
