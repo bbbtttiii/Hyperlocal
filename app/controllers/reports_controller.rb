@@ -40,26 +40,26 @@ class ReportsController < ApplicationController
   #renders edit form
   get '/reports/:id/edit' do
     redirect_if_not_logged_in
-    # fix_blank_entries
-    if params[:current_conditions] == ""
-      redirect "/reports/#{@report.id}/edit"
-    else
-      @report = Report.find_by(params)
-      if !check_owner(@report)
-        redirect '/reports'
-      end
-      erb :'reports/edit'
+    @report = Report.find_by(params)
+    if !check_owner(@report)
+      redirect '/reports'
     end
+    erb :'reports/edit'
   end
 
   #processes edit form
   patch '/reports/:id' do
     redirect_if_not_logged_in
-    @report = Report.find_by(id: params[:id])
-    if check_owner(@report)
-      @report.update(params[:report])
+    if params[:report][:current_conditions].empty?
+      flash[:req] = "Current conditions are required"
+      redirect 'reports/new'
+    else
+      @report = Report.find_by(id: params[:id])
+      if check_owner(@report)
+        @report.update(params[:report])
+      end
+      redirect "reports/#{@report.id}"
     end
-    redirect "reports/#{@report.id}"
   end
 
   #deletes a report
