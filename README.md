@@ -7,7 +7,7 @@ A CRUD/MVC app that lets amateur meteorologists and storm chasers track their st
 - Run `bundle install`
 - Run `rake db:migrate`
 - Run `rake db:seed` to start with sample data, if desired
-- Run `shotgun` and head to (http://localhost:9393)
+- Run `shotgun` and head to http://localhost:9393
 
 ## Features
 

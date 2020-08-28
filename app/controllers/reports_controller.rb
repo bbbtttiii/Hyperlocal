@@ -16,7 +16,7 @@ class ReportsController < ApplicationController
   #processes new report form
   post '/reports' do
     redirect_if_not_logged_in
-    if params[:current_conditions] == ""
+    if params[:current_conditions].empty?
       flash[:req] = "Current conditions are required"
       redirect 'reports/new'
     else
@@ -69,7 +69,7 @@ class ReportsController < ApplicationController
     if check_owner(@report)
       @report.delete
     end
-    redirect "reports/#{@report.id}"
+    redirect "/users/#{current_user.id}"
   end
 
 end
