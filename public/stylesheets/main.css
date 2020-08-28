@@ -41,11 +41,29 @@
     text-decoration: underline;
   }
 
-  .navbutton a {
+  nav {
+    margin-left: 25px;
+  }
+
+  .navbutton {
     background-color: cornflowerblue;
-    color: white;
+    opacity: 80%;
     display: inline-block;
-    padding: 3px;
+    padding: 5px;
+  }
+
+  .navbutton a {
+    padding:5px;
+    text-align:center;
+    color: white;
+  }
+
+  .navbutton:hover {
+    opacity: 100%;
+  }
+
+  .navbutton a:hover {
+    text-decoration: none;
   }
 
   .flash {
@@ -55,7 +73,7 @@
   }
 
   header a {
-    margin-left: 20px;
+    margin-left: 25px;
     color: black;
   }
 
