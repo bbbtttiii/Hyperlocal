@@ -29,7 +29,7 @@ class ReportsController < ApplicationController
 
   get '/reports/newest' do
     redirect_if_not_logged_in
-    @latest_report = Report.order(updated_at: :desc).limit(1).first #activerecord
+    @latest_report = Report.order(updated_at: :desc).first
     erb :'/reports/newest'
   end
 
