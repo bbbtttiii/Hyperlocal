@@ -27,6 +27,12 @@ class ReportsController < ApplicationController
     end
   end
 
+  get '/reports/newest' do
+    redirect_if_not_logged_in
+    @latest_report = Report.order(updated_at: :desc).limit(1).first #activerecord
+    erb :'/reports/newest'
+  end
+
   #renders a single report from user
   get '/reports/:id' do
     redirect_if_not_logged_in
@@ -72,4 +78,9 @@ class ReportsController < ApplicationController
     redirect "/users/#{current_user.id}"
   end
 
+
+
 end
+
+#write a custom route so that when a user visits /reports/newest, they see the most recent report added in the database
+#there are sevearl ways to do this, feel free to do whatever way makes sense to you, you are free to Google 

@@ -1,10 +1,10 @@
 class ApplicationController < Sinatra::Base
 
   configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "secret"
+    set :public_folder, 'public' #where static files should be served from
+    set :views, 'app/views' #where views are located
+    enable :sessions #boolean setting to enable sessions 
+    set :session_secret, "secret" #sets passkey for session (should be randomly generated)
   end
 
   register Sinatra::Flash
@@ -15,21 +15,21 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:user_id]
+      !!session[:user_id] #if session with user id exists -> true
     end
 
     def current_user
-      User.find(session[:user_id]) if session[:user_id]
+      User.find(session[:user_id]) if session[:user_id] #find user based on session w/ user
     end
 
-    def redirect_if_not_logged_in
+    def redirect_if_not_logged_in #if not current user, redirect to login page
       if !current_user
         flash[:notloggedin] = "You must log in to see that page"
         redirect '/login'
       end
     end
 
-    def check_owner(obj)
+    def check_owner(obj) #
       obj.user == current_user
     end
   end

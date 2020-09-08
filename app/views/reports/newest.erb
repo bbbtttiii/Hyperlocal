@@ -1,0 +1,18 @@
+<h2>Newest Report</h2>
+
+         <p>
+         <li><h3><%= @latest_report.updated_at %></h3></li>
+         <li>Posted by: <%= @latest_report.user.username %></li>
+         <br>
+         <li>Location: <b><%= @latest_report.location %></b></li>
+         <li>Current Conditions: <b><%= @latest_report.current_conditions %></b></li>
+         <li>Temperature: <b><%= @latest_report.temperature %><% if @latest_report.temperature %>&#176; <%= @latest_report.temp_unit %><%end%></b></li>
+         <li>Pressure: <b><%= @latest_report.pressure %><% if @latest_report.pressure %> <%= @latest_report.pressure_unit %><%end%></b></li>
+         <li>Wind Speed: <b><%= @latest_report.wind_speed %><% if @latest_report.wind_speed %> <%= @latest_report.wind_unit %><%end%></b></li>
+         <li>Wind Direction: <b><%= @latest_report.wind_direction %></b></li>
+         <li>Relative Humidity: <b><%= @latest_report.relative_humidity %><% if @latest_report.relative_humidity %>&#37;<%end%></b></li>
+         <li>Precipitation: <b><%= @latest_report.precipitation %><% if @latest_report.precipitation %> <%= @latest_report.precip_unit %><%end%></b></li>
+         <li>Cloud Cover: <b><%= @latest_report.cloud_cover %><% if @latest_report.cloud_cover %>&#37;<%end%></b></li>
+         <li>Cloud Type: <b><%= @latest_report.cloud_type %></b></li>
+         </p>
+         <hr>
