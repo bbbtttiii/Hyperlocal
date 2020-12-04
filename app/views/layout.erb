@@ -8,22 +8,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>Hyperlocal</title>
   </head>
   <body>
   <header>
-    <% if logged_in? %>
-      <h1><a href="/users/<%=current_user.id%>">Hyperlocal</a></h1>
-      <nav>
-         <span class="navbutton"><a href="/reports/new">Add Report</a></span>
-         <span class="navbutton"><a href="/users/<%=current_user.id%>">My Reports</a></span>
-         <span class="navbutton"><a href="/reports">All Reports</a></span>
-         <span class="navbutton"><a href="/reports/newest">Latest Report</a></span>
-         <span class="navbutton"><a href="/logout">Log Out</a></span>
-      </nav>
-    <% else %>
-      <h1><a href="/login">Hyperlocal</a></h1>
-    <% end %>
+    <div class="navcontainer">
+      <% if logged_in? %>
+        <h1><a href="/users/<%=current_user.id%>">Hyperlocal</a></h1>
+        <nav>
+          <span class="navbutton"><a href="/reports/new">Add Report</a></span>
+          <span class="navbutton"><a href="/users/<%=current_user.id%>">My Reports</a></span>
+          <span class="navbutton"><a href="/reports">All Reports</a></span>
+          <span class="navbutton"><a href="/reports/newest">Latest Report</a></span>
+          <span class="navbutton"><a href="/logout">Log Out</a></span>
+        </nav>
+      <% else %>
+        <h1><a href="/login">Hyperlocal</a></h1>
+      <% end %>
+    </div>
   </header>
     <div class="wrapper">
       <%= yield %>

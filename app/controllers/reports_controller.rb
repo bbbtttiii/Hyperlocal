@@ -27,6 +27,7 @@ class ReportsController < ApplicationController
     end
   end
 
+  #shows the latest report
   get '/reports/newest' do
     redirect_if_not_logged_in
     @latest_report = Report.order(updated_at: :desc).first
