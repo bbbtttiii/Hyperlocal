@@ -18,10 +18,10 @@
       <% if logged_in? %>
         <h1><a href="/users/<%=current_user.id%>">Hyperlocal</a></h1>
         <nav>
-          <span class="navbutton"><a href="/reports/new">Add Report</a></span>
-          <span class="navbutton"><a href="/users/<%=current_user.id%>">My Reports</a></span>
-          <span class="navbutton"><a href="/reports">All Reports</a></span>
-          <span class="navbutton"><a href="/reports/newest">Latest Report</a></span>
+          <span class="navbutton"><a href="/reports/new">New Observation</a></span>
+          <span class="navbutton"><a href="/users/<%=current_user.id%>">My Obs</a></span>
+          <span class="navbutton"><a href="/reports">All Obs</a></span>
+          <span class="navbutton"><a href="/reports/newest">Latest Obs</a></span>
           <span class="navbutton"><a href="/logout">Log Out</a></span>
         </nav>
       <% else %>

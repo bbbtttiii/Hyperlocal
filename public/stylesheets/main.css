@@ -4,7 +4,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
   }
 
   html, body {
@@ -16,7 +16,8 @@
   body {
     background-color: #eee ;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto', Sans-Serif; */
   }
 
   header {
@@ -35,21 +36,53 @@
     background: #fff;
     border: 1px #ddd solid;
     margin: 16px auto;
+    padding: 25px;
     max-width: 1200px;
-    /* padding: 25px 100px 25px; */
     width: 95%;
   }
 
   a:link,
   a:visited {
     text-decoration: none;
-    color: black;
+    color: blue;
   }
 
   a:hover,
   a:active {
     text-decoration: underline;
-    color: black;
+    color: blue;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 10px;
+    grid-template-areas:
+      "Left Right"
+      "Center Center";
+  }
+
+  .Left {
+    grid-area: Left;
+    text-align: right;
+  }
+
+  .Right {
+    grid-area: Right;
+    text-align: left;
+  }
+
+  .Center {
+    padding-top: 1em;
+    grid-area: Center;
+    text-align: center;
+  }
+
+
+  form label {
+    display: block;
+    padding-bottom: 4px;
   }
 
   header nav {
@@ -67,13 +100,12 @@
 
   .navbutton {
     background-color: blue;
-    opacity: 70%;
-    padding: 5px;
-    margin: auto;
+    opacity: 75%;
+    padding: 5px 10px 5px;
+    margin: 5px;
   }
 
   .navbutton a {
-    text-align: left;
     color: white;
   }
 
@@ -91,13 +123,18 @@
     color: red;
   }
 
-  form, input {
+  form, input, select {
     font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
   }
 
   header h1 {
     padding-right: 2%;
     font-size: 28px;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  header h1 a {
     color: black;
   }
 

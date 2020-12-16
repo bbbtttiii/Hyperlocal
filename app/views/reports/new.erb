@@ -2,40 +2,37 @@
 
 <span class="flash"><%= flash[:req]%></span>
 
-<form action="/reports" method="post">
+<form action="/reports" method="post" class="grid-container">
+    <div class="Left">
+      <label>Location</label>
+      <label>Current conditions</label>
+      <label>Temperature</label>
+      <label>Pressure</label>
+      <label>Wind Speed</label>
+      <label>Wind Direction</label>
+      <label>Relative Humidity</label>
+      <label>Precipation Total</label>
+      <label>Cloud Cover</label>
+      <label>Cloud Type</label>
+    </div>
 
-    Location<br>
-    <input type="text" name="location">
+    <div class="Right">
+      <input type="text" name="location"><br>
+      <input type="text" name="current_conditions"><br>
+      <input type="text" name="temperature"> <select id="temp_unit" name="temp_unit"><option name="f" value="&#176;F">&#176;F</option><option name="c" value="&#176;c">&#176;c</option><option name="k" value="K">K</option></select><br>
+      <input type="text" name="pressure"> <select id="pressure_unit" name="pressure_unit"><option name="mb" value="mb">mb</option><option name="inhg" value="inHg">inHg</option><option name="mmhg" value="mmHg">mmHg</option></select><br>
+      <input type="text" name="wind_speed"> <select id="wind_unit" name="wind_unit"><option name="mph" value="mph">mph</option><option name="kph" value="kph">kph</option><option name="knots" value="knots">knots</option></select><br>
+      <input type="text" name="wind_direction"><br>
+      <input type="text" name="relative_humidity" > &#37;<br>
+      <input type="text" name="precipitation"> <select id="precip_unit" name="precip_unit"><option name="in" value="in">in</option><option name="cm" value="cm">cm</option></select><br>
+      <input type="text" name="cloud_cover"> &#37;<br>
+      <input type="text" name="cloud_type"><br>
+    </div>
+
+    <div class=Center>
+      <input type="submit" value="Submit">
+    </div>
     <br><br>
-    Current Conditions *<br>
-    <input type="text" name="current_conditions">
-    <br><br>
-    Temperature<br>
-    <input type="text" name="temperature"><select id="temp_unit" name="temp_unit"><option name="f" value="&#176;F">&#176;F</option><option name="c" value="&#176;c">&#176;c</option><option name="k" value="K">K</option></select>
-    <br><br>
-    Pressure<br>
-    <input type="text" name="pressure"><select id="pressure_unit" name="pressure_unit"><option name="mb" value="mb">mb</option><option name="inhg" value="inHg">inHg</option><option name="mmhg" value="mmHg">mmHg</option></select>
-    <br><br>
-    Wind Speed<br>
-    <input type="text" name="wind_speed"><select id="wind_unit" name="wind_unit"><option name="mph" value="mph">mph</option><option name="kph" value="kph">kph</option><option name="knots" value="knots">knots</option></select>
-    <br><br>
-    Wind Direction<br>
-    <input type="text" name="wind_direction">
-    <br><br>
-    Relative Humidity (&#37;)<br>
-    <input type="text" name="relative_humidity">
-    <br><br>
-    Precipation Total<br>
-    <input type="text" name="precipitation"><select id="precip_unit" name="precip_unit"><option name="in" value="in">in</option><option name="cm" value="cm">cm</option></select>
-    <br><br>
-    Cloud Cover (&#37;)<br>
-    <input type="text" name="cloud_cover">
-    <br><br>
-    Cloud Type<br>
-    <input type="text" name="cloud_type">
-    <br><br>
-    <input type="submit" value="Submit">
-    <br><br>
-    <small>* Required</small>
+
 
 </form>
