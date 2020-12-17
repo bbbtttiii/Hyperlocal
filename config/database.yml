@@ -1,15 +1,14 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 2
-  host: <%= ENV['DATA_DB_HOST'] %>
-  username: <%= ENV['DATA_DB_USER'] %>
-  password: <%= ENV['DATA_DB_PASS'] %>
-
 development:
-  <<: *default
-  database: development
+  adapter: sqlite3
+  database: db/development.sqlite
+  host: localhost
+  pool: 5
+  timeout: 5000
 
 production:
-  <<: *default
-  database: production
+  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database: mydb
+  host: localhost 
+  pool: 5
+  timeout: 5000
