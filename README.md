@@ -1,5 +1,5 @@
 # Hyperlocal
-A CRUD/MVC app that lets amateur meteorologists and storm chasers track their station observations.
+A CRUD/MVC app to help amateur meteorologists and storm chasers track their station observations.
 
 ![](hyperlocal.gif)
 
