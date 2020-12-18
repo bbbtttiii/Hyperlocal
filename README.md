@@ -1,6 +1,8 @@
 # Hyperlocal
 A CRUD/MVC app that lets amateur meteorologists and storm chasers track their station observations.
 
+![](hyperlocal.gif)
+
 ## Getting Started
 
 - Clone
