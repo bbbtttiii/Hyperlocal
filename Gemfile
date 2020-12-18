@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
+gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
@@ -10,8 +10,6 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'sinatra-flash'
-gem 'pg', '~> 0.20'
-gem 'activerecord-postgresql-adapter'
 
 group :test do
   gem 'rspec'
@@ -21,6 +19,11 @@ group :test do
 end
 
 group :development do
-  gem 'sqlite3', '~> 1.3.6' 
+  gem 'sqlite3'
   gem 'tux'
+end
+
+group :production do
+   gem 'pg'
+   gem 'activerecord-postgresql-adapter'
 end

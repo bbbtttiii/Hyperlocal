@@ -1,4 +1,7 @@
-require 'sinatra'
+ENV['SINATRA_ENV'] ||= "development"
+
+require 'bundler/setup'
+Bundler.require(:default, ENV['SINATRA_ENV'])
 
 configure :development do
   ActiveRecord::Base.establish_connection(
@@ -19,3 +22,6 @@ configure :production do
     :encoding => 'utf8'
   )
 end
+
+require_all 'app'
+require 'open-uri'
