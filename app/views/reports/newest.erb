@@ -1,5 +1,8 @@
-<h2>Latest Report</h2>
+<h2>Latest Observation</h2>
 
+<% if @latest_report == nil %>
+  <p>None</p>
+<% else %>
 <p>
 <li><h3><%= @latest_report.updated_at %></h3></li>
 <li>Posted by: <%= @latest_report.user.username %></li>
@@ -16,3 +19,5 @@
 <li>Cloud Type: <b><%= @latest_report.cloud_type %></b></li>
 </p>
 <hr>
+<% end %>
+

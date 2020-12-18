@@ -35,7 +35,7 @@
     flex-direction: column;
     background: #fff;
     border: 1px #ddd solid;
-    margin: 16px auto;
+    margin: 10px auto;
     padding: 25px;
     max-width: 1200px;
     width: 95%;
@@ -75,7 +75,7 @@
 
   .Center {
     padding-top: 1em;
-    grid-area: Center;
+    grid-area: center;
     text-align: center;
   }
 
@@ -129,7 +129,7 @@
   }
 
   header h1 {
-    padding-right: 2%;
+    padding-right: 5%;
     font-size: 28px;
     font-family: 'Roboto Mono', monospace;
   }

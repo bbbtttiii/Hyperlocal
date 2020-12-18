@@ -1,5 +1,3 @@
-<h2>Report</h2>
-
 <li><h3><%= @report.updated_at %></h3></li>
 <br>
 <li>Location: <b><%= @report.location %></b></li>
@@ -17,14 +15,13 @@
 
   <br>
   <form action="/reports/<%=@report.id%>/edit" method="get">
-    <input type="submit" value="Edit Report">
+    <input type="submit" value="Edit">
   </form>
   <form action="/reports/<%=@report.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Report">
+    <input type="submit" value="Delete">
   </form>
   <br>
-  <a href="/users/<%=current_user.id%>">Back to my reports</a>
+  <a href="/users/<%=current_user.id%>">Back to my observations</a>
 
 <% end %>
-
