@@ -10,7 +10,8 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'sinatra-flash'
-gem 'pg', '~> 1.2.3'
+gem 'pg', '~> 0.20'
+gem 'activerecord-postgresql-adapter'
 
 group :test do
   gem 'rspec'

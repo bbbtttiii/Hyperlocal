@@ -1,17 +1,10 @@
 <h2>Hello, <%=@user.username%>!</h2>
-
 <h3>Your Reports:</h3>
 
 <% if @reports.empty? %>
-
   <p>None</p>
-
 <%else%>
-
   <% @reports.each do |r| %>
-
     <li><a href="/reports/<%=r.id%>"><%= r.updated_at %></a></li>
-
   <%end%>
-
 <% end %>
