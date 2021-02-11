@@ -1,10 +1,16 @@
-<h2>Welcome!</h2>
-
-<% if !logged_in? %>
-    <a href="/login">Log In</a>
-    <a href="/signup">Sign Up</a>
-<% else %>
+<%# <div class="Center"> %>
+  <h1><b>Hyperlocal</b> is a platform for amateur meteorologists and stormchasers.</h1><br>
+    <img src="images/wx1.gif" width="300px">
+    <br><br><br>
+  <% if !logged_in? %>
+    <h2>
+      <a href="/login">Log In</a> or
+      <a href="/signup">Create An Account</a>
+    </h2>
+  <% else %>
     <a href="/reports/new">New Observation</a><br>
     <a href="/users/<%=current_user.id%>">My Observations</a><br>
     <a href="/reports/index">All Observations</a>
-<% end %>
+  <% end %>
+  <br><br><br>
+<%# </div> %>

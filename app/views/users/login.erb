@@ -4,11 +4,9 @@
 <span class="flash"><%= flash[:error] %></span>
 
 <form action="/login" method="post">
-    Username
-    <input type="text" name="username" value="<%= @user && @user.username %>">
-    <br><br>
-    Password
-    <input type="password" name="password">
+    <input type="text" placeholder="Username" name="username" value="<%= @user && @user.username %>">
+    <br>
+    <input type="password" placeholder="Password" name="password">
     <br><br>
     <input type="submit" value="Log In">
     <br><br>

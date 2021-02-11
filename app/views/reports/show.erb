@@ -14,13 +14,15 @@
 <% if @report.user == current_user %>
 
   <br>
-  <form action="/reports/<%=@report.id%>/edit" method="get">
-    <input type="submit" value="Edit">
-  </form>
-  <form action="/reports/<%=@report.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-  </form>
+  <div class="button-container">
+    <form action="/reports/<%=@report.id%>/edit" method="get">
+      <input type="submit" value="Edit">
+    </form>
+    <form action="/reports/<%=@report.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
   <br>
   <a href="/users/<%=current_user.id%>">Back to my observations</a>
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Hyperlocal</title>
   </head>
   <body>
@@ -19,14 +20,14 @@
       <% if logged_in? %>
         <h1><a href="/users/<%=current_user.id%>">Hyperlocal</a></h1>
         <nav>
-          <span class="navbutton"><a href="/reports/new">New Observation</a></span>
-          <span class="navbutton"><a href="/users/<%=current_user.id%>">My Obs</a></span>
-          <span class="navbutton"><a href="/reports">All Obs</a></span>
-          <span class="navbutton"><a href="/reports/newest">Latest Obs</a></span>
+          <span class="navbutton" id=<%="navbutton-selected" if active_page?("users/#{current_user.id}") %>><a href="/users/<%=current_user.id%>">My Obs</a></span>
+          <span class="navbutton" id=<%="navbutton-selected" if active_page?("reports/new") %>><a href="/reports/new">New Observation</a></span>
+          <span class="navbutton" id=<%="navbutton-selected" if active_page?("reports") %>><a href="/reports">All Obs</a></span>
+          <span class="navbutton" id=<%="navbutton-selected" if active_page?("reports/newest") %>><a href="/reports/newest">Latest Obs</a></span>
           <span class="navbutton"><a href="/logout">Log Out</a></span>
         </nav>
       <% else %>
-        <h1><a href="/login">Hyperlocal</a></h1>
+        <h1><a href="/">Hyperlocal</a></h1>
       <% end %>
     </div>
   </header>
@@ -34,7 +35,7 @@
       <%= yield %>
       <br>
       <footer class="branding">
-        <small>&copy; 2020 <strong>Hyperlocal</strong>&#9889;</small>
+        <small>&copy; 2021 <strong>Hyperlocal</strong>&#9889;</small>
       </footer>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

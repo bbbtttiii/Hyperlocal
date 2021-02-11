@@ -34,6 +34,11 @@ class ApplicationController < Sinatra::Base
     def check_owner(obj) #
       obj.user == current_user
     end
+
+    def active_page?(path='')
+      request.path_info == '/' + path
+    end
+
   end
 
 end
