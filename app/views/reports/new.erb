@@ -2,9 +2,8 @@
 
 <span class="flash"><%= flash[:req]%></span>
 
-<form action="/reports" method="post" class="grid-container">
+<form action="/reports" method="post">
 
-    <div class="Right">
       <input type="text" placeholder="Location" name="location"><br>
       <input type="text" placeholder="Current conditions" name="current_conditions"><br>
       <input type="text" placeholder="Temperature" name="temperature"> <select id="temp_unit" name="temp_unit"><option name="f" value="&#176;F">&#176;F</option><option name="c" value="&#176;c">&#176;c</option><option name="k" value="K">K</option></select><br>
@@ -14,13 +13,9 @@
       <input type="text" placeholder="Relative Humidity" name="relative_humidity" > &#37;<br>
       <input type="text" placeholder="Precipation Total" name="precipitation"> <select id="precip_unit" name="precip_unit"><option name="in" value="in">in</option><option name="cm" value="cm">cm</option></select><br>
       <input type="text" placeholder="Cloud Cover" name="cloud_cover"> &#37;<br>
-      <input type="text" placeholder="Cloud Type" name="cloud_type"><br>
-    </div>
+      <input type="text" placeholder="Cloud Type" name="cloud_type"><br><br>
 
-    <div class=Center>
       <input type="submit" value="Submit">
-    </div>
     <br><br>
-
 
 </form>
