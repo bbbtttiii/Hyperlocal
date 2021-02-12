@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public' #where static files should be served from
     set :views, 'app/views' #where views are located
     enable :sessions #boolean setting to enable sessions 
-    set :session_secret, "secret" #sets passkey for session (should be randomly generated)
+    set :session_secret, ENV['SESSION_SECRET'] #sets passkey for session (should be randomly generated)
   end
 
   register Sinatra::Flash
@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id]) if session[:user_id] #find user based on session w/ user
     end
 
-    def redirect_if_not_logged_in #if not current user, redirect to login page
+    def redirect_if_not_logged_in
       if !current_user
         flash[:notloggedin] = "You must log in to see that page"
         redirect '/login'

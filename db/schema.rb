@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_02_12_155048) do
 
-  create_table "reports", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "reports", id: :serial, force: :cascade do |t|
     t.float "temperature"
     t.float "pressure"
     t.float "wind_speed"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_155048) do
     t.string "notes"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false

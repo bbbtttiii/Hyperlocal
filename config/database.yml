@@ -1,14 +1,10 @@
 development:
-  adapter: sqlite3
-  database: database.db
-
-test:
-  adapter: sqlite3
-  database: database.db
-
+  adapter: postgresql
+  encoding: unicode
+  database: database_development
+  pool: 2
 production:
   adapter: postgresql
-  database: db
-  username: username
-  password: password
-  host: localhost
+  encoding: unicode
+  databaes: database_production
+  pool: 5

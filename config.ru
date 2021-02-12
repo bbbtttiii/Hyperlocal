@@ -6,4 +6,4 @@ use Rack::MethodOverride #middleware for patch/delete requests
 
 use ReportsController
 use UsersController
-run ApplicationController #program can only take one 'run' command, other controllers inherit from appcontoller
+run ApplicationController
