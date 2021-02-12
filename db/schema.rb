@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_135848) do
+ActiveRecord::Schema.define(version: 2021_02_12_155048) do
 
   create_table "reports", force: :cascade do |t|
     t.float "temperature"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_135848) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notes"
   end
 
   create_table "users", force: :cascade do |t|
