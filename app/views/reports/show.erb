@@ -1,28 +1,47 @@
-<li><h3><%= @report.updated_at %></h3></li>
-<br>
-<li>Location: <b><%= @report.location %></b></li>
-<li>Current Conditions: <b><%= @report.current_conditions %></b></li>
-<li>Temperature: <b><%= @report.temperature %><% if @report.temperature != nil %> <%= @report.temp_unit %><%end%></b></li>
-<li>Pressure: <b><%= @report.pressure %><% if @report.pressure != nil %> <%= @report.pressure_unit %><%end%></b></li>
-<li>Wind Speed: <b><%= @report.wind_speed %><% if @report.wind_speed != nil %> <%= @report.wind_unit %><%end%></b></li>
-<li>Wind Direction: <b><%= @report.wind_direction %></b></li>
-<li>Relative Humidity: <b><%= @report.relative_humidity %><%if @report.relative_humidity != nil %>&#37;<%end%></b></li>
-<li>Precipitation: <b><%= @report.precipitation %><% if @report.precipitation != nil %> <%= @report.precip_unit %><%end%></b></li>
-<li>Cloud Cover: <b><%= @report.cloud_cover %><% if @report.cloud_cover != nil%>&#37;<%end%></b></li>
-<li>Cloud Type: <b><%= @report.cloud_type %></b></li>
-
-<% if @report.user == current_user %>
-
-  <br>
-  <div class="button-container">
-    <form action="/reports/<%=@report.id%>/edit" method="get">
-      <input type="submit" value="Edit">
-    </form>
-    <form action="/reports/<%=@report.id%>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
-    </form>
+<div class="obs-tab">
+  <div class="row">
+    <div class="col">
+      <h3><%= @report.updated_at %></h3>
+    </div>
+    <div class="col">
+      <h3><img class="icon" src="/images/icons/location_on-black-18dp.svg"><%= @report.location %></h3>
+    </div>
   </div>
+</div>
+
+<div class="obs-content">
+  <div class="row">
+    <br>
+    <div class="col">
+      <li><img class="icon" src="/images/icons/thermostat-24px.svg"><h2><%= @report.temperature %><% if @report.temperature != nil %> <%= @report.temp_unit %><%end%></h2></li>
+      <li><img class="icon" src="/images/icons/visibility-24px.svg"><h2><%= @report.current_conditions %></h2></li>
+      <hr class="short-hr">
+      <li><img class="icon" src="/images/icons/comment-24px.svg"></li>
+    </div>
+    <div class="col">
+      <li><img class="icon" src="/images/icons/storm-24px.svg"><b><%= @report.pressure %><% if @report.pressure != nil %> <%= @report.pressure_unit %><%end%></b></li>
+      <li><img class="icon" src="/images/icons/air-24px.svg"><b><%= @report.wind_speed %><% if @report.wind_speed != nil %> <%= @report.wind_unit %><%end%> <%= @report.wind_direction %></b></li>
+      <li><img class="icon" src="/images/icons/opacity-24px.svg"><b><%= @report.relative_humidity %><%if @report.relative_humidity != nil %>&#37; humidity<%end%></b></li>
+      <li><img class="icon" src="/images/icons/straighten-24px.svg"><b><%= @report.precipitation %><% if @report.precipitation != nil %> <%= @report.precip_unit %><%end%></b></li>
+      <li><img class="icon" src="/images/icons/cloud-24px.svg"><b><%= @report.cloud_type %> - <%= @report.cloud_cover %><% if @report.cloud_cover != nil%>&#37; cover<%end%></b></li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <% if @report.user == current_user %>
+      <br>
+      <div class="button-container">
+        <form action="/reports/<%=@report.id%>/edit" method="get">
+          <input type="submit" value="Edit">
+        </form>
+        <form action="/reports/<%=@report.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
   <br>
   <a href="/users/<%=current_user.id%>">Back to my observations</a>
 

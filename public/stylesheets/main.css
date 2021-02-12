@@ -36,13 +36,77 @@
     flex-direction: column;
     background-color: white;
     border-radius: 8px;
-    /* border: 1px #ddd solid; */
     margin: 20px auto;
     padding: 25px;
     max-width: 1200px;
-    /* width: 90%; */
+    width: 90%;
     min-height: 80vh;
   }
+
+  div.obs-tab {
+    display: inline;
+    padding: 10px;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px 10px 0 0;
+    background-color: rgb(31, 34, 39);
+    color: white;
+  }
+
+  div.obs-content {
+    max-width: 700px;
+    padding: 20px 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+  }
+
+  img.icon {
+    padding: 0 5px 0;
+  }
+
+  div.obs-content li {
+    vertical-align: center;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .col {
+    flex: 50%;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  hr.short-hr {
+    margin: 10px;
+    width: 50%;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  /* span.left {
+    float:left;
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  span.right {
+    float: right;
+    text-align: right;
+    margin-right: 5%;
+  }
+
+  span.inner-right {
+    float: right;
+    text-align: right;
+    margin-right: 5%;
+  } */
 
   .grid-container {
     display: grid;
@@ -97,7 +161,7 @@
     color: white;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px 10px 5px;
     /* font-size: 0.75em; */
     /* border-radius: 8px; */
     margin: 0;
@@ -110,7 +174,7 @@
   
   .navcontainer {
     max-width: 1200px;
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
@@ -238,7 +302,7 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
+    border-top: 1px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
   }
