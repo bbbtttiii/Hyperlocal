@@ -1,4 +1,5 @@
 <%# <div class="Center"> %>
+  <img src="images/wx1.gif" width="250px"><br>
   <h1><b>Hyperlocal</b> is a platform for amateur meteorologists and stormchasers.</h1><br>
   <% if !logged_in? %>
     <h2>
@@ -6,11 +7,6 @@
       <a href="/signup">Create An Account</a>
     </h2>
   <% else %>
-    <a href="/reports/new">New Observation</a><br>
-    <a href="/users/<%=current_user.id%>">My Observations</a><br>
-    <a href="/reports/index">All Observations</a>
   <% end %>
-  <br>
-    <img src="images/wx1.gif" width="300px">
   <br><br>
 <%# </div> %>
