@@ -3,8 +3,14 @@ development:
   encoding: unicode
   database: database_development
   pool: 2
+  user: postgres
+  password: <%= ENV['PG_PASSWORD'] %>
+  port: 5439
 production:
   adapter: postgresql
   encoding: unicode
   database: database_production
   pool: 5
+  port: 5439
+  user: postgres
+  password: <%= ENV['PG_PASSWORD'] %>

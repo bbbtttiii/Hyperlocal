@@ -14,6 +14,7 @@ gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'pg'
 gem 'dotenv'
+gem 'figaro'
 
 group :test do
   gem 'rspec'
