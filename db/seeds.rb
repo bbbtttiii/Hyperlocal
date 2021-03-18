@@ -8,6 +8,10 @@ User.create(
     username: "b", password: "2"
 )
 
+User.create(
+    username: "c", password: "3"
+)
+
 Report.create(
     user_id: 1,
     location: "St Paul, MN",
@@ -59,5 +63,23 @@ Report.create(
     cloud_cover: 95,
     cloud_type: "Stratus",
     precipitation: 0.7,
+    precip_unit: "in"
+)
+
+Report.create(
+    user_id: 3,
+    location: "Baton Rouge, LA",
+    temperature: 84,
+    temp_unit: "f",
+    current_conditions:"Overcast, rain",
+    pressure: 994,
+    pressure_unit: "mb",
+    wind_speed: 18,
+    wind_direction: "SE",
+    wind_unit: "mph",
+    relative_humidity: 79,
+    cloud_cover: 100,
+    cloud_type: "Stratus",
+    precipitation: 0.9,
     precip_unit: "in"
 )
