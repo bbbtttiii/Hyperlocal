@@ -141,6 +141,7 @@
 
   header nav {
     padding-left: 30px;
+    width: 100%;
   }
 
   .button-container,
@@ -184,8 +185,6 @@
 
   .navbutton {
     margin: 5px;
-    /* margin: 5px; */
-    /* background-color: rgb(6, 52, 95); */
     display: inline-flex;
     flex-direction: row;
     align-items: baseline;
@@ -195,6 +194,11 @@
     opacity: 90%;
     color: white;
     text-decoration: none;
+  }
+
+  #rightnav {
+    float: right;
+    padding-right: 30px;
   }
 
   #navbutton-selected {
@@ -242,8 +246,8 @@
   }
 
   header h1 a {
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 10px;
+    padding-left: 30px;
     font-size: 28px;
     font-family: 'Roboto Mono', monospace;
     color: white;
@@ -317,14 +321,21 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     width: auto;
+    border-radius: 0;
   }
 
   header nav {
     padding-left: 10px;
+    margin-left: 15px;
   }
 
   header nav li a {
     line-height: 0.5em;
+  }
+
+  #rightnav {
+    float: left;
+    padding: 0;
   }
 
   .content, .sidebar {
