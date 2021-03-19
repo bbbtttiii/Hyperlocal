@@ -1,6 +1,8 @@
 # Hyperlocal
 A CRUD/MVC app to help amateur meteorologists and storm chasers track their station observations.
 
+Live demo: http://hyperlocal-wx.herokuapp.com
+
 ![](hyperlocal-gif.gif)
 
 ## Getting Started
